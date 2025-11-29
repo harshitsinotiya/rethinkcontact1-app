@@ -1,19 +1,15 @@
 package rethink.controller;
 
-
-
 import org.springframework.web.bind.annotation.*;
-
-
-
 import rethink.service.ContactService;
 import rethink.contact.entity.Contact;
-
 import java.util.List;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
-  // Allow your VS Code frontend
-@CrossOrigin("https://timely-moxie-6ee490.netlify.app")
+@CrossOrigin(
+        origins = "https://timely-moxie-6ee490.netlify.app",
+        allowedHeaders = "*",
+        methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.OPTIONS}
+)
 @RestController
 @RequestMapping("/contacts")
 public class ContactController {
@@ -26,7 +22,7 @@ public class ContactController {
 
     @GetMapping
     public List<Contact> getAllContacts() {
-        return service.getAllContacts();  
+        return service.getAllContacts();
     }
 
     @PostMapping
