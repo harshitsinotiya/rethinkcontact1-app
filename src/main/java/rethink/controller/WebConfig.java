@@ -14,7 +14,7 @@ public class WebConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("https://frontendrethinking-3et7.vercel.app") // frontend URL
+                        .allowedOrigins("https://indexing-3kdj.onrender.com") // frontend URL
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);
@@ -22,3 +22,4 @@ public class WebConfig {
         };
     }
 }
+
