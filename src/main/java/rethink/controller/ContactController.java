@@ -7,7 +7,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/contacts")
-@CrossOrigin(origins = "*") // safe CORS
+@CrossOrigin(origins = "http://127.0.0.1:5501/index.html/index.html") // safe CORS
 public class ContactController {
 
     private final ContactService service;
