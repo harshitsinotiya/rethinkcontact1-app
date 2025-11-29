@@ -18,7 +18,8 @@ public class WebConfig {
                                 "https://indexing-3kdj.onrender.com",
                                 "http://127.0.0.1:5501",
                                 "http://localhost:5501",
-                                "https://rethinkcontact1-app.onrender.com"
+                                "https://rethinkcontact1-app.onrender.com",
+                         "http://127.0.0.1:5501/index.html"
                         )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
@@ -27,6 +28,7 @@ public class WebConfig {
         };
     }
 }
+
 
 
 
