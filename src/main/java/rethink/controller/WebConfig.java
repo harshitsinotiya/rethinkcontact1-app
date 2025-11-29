@@ -14,7 +14,7 @@ public class WebConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("https://glowing-sunburst-03f03b.netlify.app") // remove trailing slash
+                        .allowedOrigins("https://frontendrethinking-3et7.vercel.app/") // remove trailing slash
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);
@@ -22,6 +22,7 @@ public class WebConfig {
         };
     }
 }
+
 
 
 
