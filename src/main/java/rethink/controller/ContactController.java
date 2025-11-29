@@ -12,7 +12,7 @@ import rethink.contact.entity.Contact;
 import java.util.List;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-@CrossOrigin(origins = "https://546vxpt2-5500.inc1.devtunnels.ms/") // Allow your VS Code frontend
+// Allow your VS Code frontend
 @RestController
 @RequestMapping("/contacts")
 public class ContactController {
