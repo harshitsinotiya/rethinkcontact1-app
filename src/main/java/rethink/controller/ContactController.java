@@ -5,13 +5,9 @@ import rethink.service.ContactService;
 import rethink.contact.entity.Contact;
 import java.util.List;
 
-// @CrossOrigin(
-//         origins = "https://timely-moxie-6ee490.netlify.app",
-//         allowedHeaders = "*",
-//         methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.OPTIONS}
-// )
 @RestController
 @RequestMapping("/contacts")
+@CrossOrigin(origins = "https://frontendrethinking-3et7.vercel.app") // Allow your frontend
 public class ContactController {
 
     private final ContactService service;
