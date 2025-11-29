@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 // Allow your VS Code frontend
 // Allow your VS Code frontend
+@CrossOrigin(origins = "*") 
 @RestController
 @RequestMapping("/contacts")
 public class ContactController {
