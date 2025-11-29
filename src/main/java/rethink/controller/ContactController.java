@@ -7,7 +7,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/contacts")
-@CrossOrigin(origins = "https://frontendrethinking-3et7.vercel.app") // safe CORS
+@CrossOrigin(origins = "https://indexing-3kdj.onrender.com") // safe CORS
 public class ContactController {
 
     private final ContactService service;
