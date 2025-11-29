@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 // Allow your VS Code frontend
 // Allow your VS Code frontend
-@CrossOrigin(origins = "*") 
+@CrossOrigin(origins = "https://timely-moxie-6ee490.netlify.app") 
 @RestController
 @RequestMapping("/contacts")
 public class ContactController {
