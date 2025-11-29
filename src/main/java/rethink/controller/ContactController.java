@@ -13,7 +13,7 @@ import java.util.List;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 // Allow your VS Code frontend
-@CrossOrigin(origins = "https://preeminent-speculoos-4b.netlify.app") // Allow your VS Code frontend
+// Allow your VS Code frontend
 @RestController
 @RequestMapping("/contacts")
 public class ContactController {
