@@ -1,12 +1,12 @@
 package rethink.controller;
 
-import org.springframework.stereotype.Controller;
+
 import org.springframework.web.bind.annotation.*;
 import rethink.service.ContactService;
 import rethink.contact.entity.Contact;
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/contacts")
 @CrossOrigin(origins = "*")
 public class ContactController {
