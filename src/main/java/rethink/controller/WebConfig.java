@@ -16,7 +16,7 @@ public class WebConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                .allowedOrigins("https://indexing-3kdj.onrender.com", "http://localhost:3000", "*",)
+                .allowedOrigins("https://indexing-3kdj.onrender.com", "http://localhost:3000", "*")
 
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS");
                        
@@ -25,6 +25,7 @@ public class WebConfig {
         };
     }
 }
+
 
 
 
