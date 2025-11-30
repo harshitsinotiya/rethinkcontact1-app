@@ -5,7 +5,7 @@ import rethink.service.ContactService;
 import rethink.contact.entity.Contact;
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/contacts")
 @CrossOrigin(origins = "*")
 public class ContactController {
