@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f6f6f6;
+        }
+        h2 {
+            color: #007bff;
+        }
+        form {
+            margin-bottom: 20px;
+            background: #fff;
+            padding: 15px;
+            width: 350px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background: #fff;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        th {
+            background: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Contact Form</h2>
+
+<form id="contactForm" >
+    <input type="text" id="name" placeholder="Full Name" required>
+    <input type="email" id="email" placeholder="Email">
+    <input type="text" id="contactNo" placeholder="Contact Number" required>
+    <input type="text" id="location" placeholder="Location">
+    <textarea id="description" placeholder="Description (optional)"></textarea>
+    <button type="submit">Save Contact</button>
+</form>
+
+<h3>Contacts List</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact No</th>
+            <th>Location</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody id="contactTable"></tbody>
+</table>
+
+<script>
+    const API_URL = "https://rethinkcontact1-app.onrender.com/contacts";
+
+    function loadContacts() {
+        fetch(API_URL)
+            .then(res => res.json())
+            .then(data => {
+                const table = document.getElementById("contactTable");
+                table.innerHTML = "";
+                data.forEach(contact => {
+                    table.innerHTML += `
+                        <tr>
+                            <td>${contact.name}</td>
+                            <td>${contact.email || ''}</td>
+                            <td>${contact.contactNo}</td>
+                            <td>${contact.location || ''}</td>
+                            <td>${contact.description || ''}</td>
+                        </tr>`;
+                });
+            })
+            .catch(err => console.error("Error fetching contacts:", err));
+    }
+
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const newContact = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            contactNo: document.getElementById("contactNo").value,
+            location: document.getElementById("location").value,
+            description: document.getElementById("description").value
+        };
+
+        fetch(API_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(newContact)
+        })
+        .then(res => res.json())
+        .then(() => {
+            alert("Contact Saved Successfully!");
+            loadContacts();
+        })
+        .catch(err => console.error("Error saving contact:", err));
+    });
+
+    // Load existing contacts
+    loadContacts();
+</script>
+
+</body>
+</html>
