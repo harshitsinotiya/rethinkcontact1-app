@@ -17,8 +17,10 @@ public class GlobalCorsConfig {
         config.setAllowCredentials(true); // if using cookies, else false
         config.setAllowedOrigins(Arrays.asList(
                 "https://indexing-3kdj.onrender.com",
-                "http://localhost:3000",
-            "http://localhost:8080"
+                "https://indexing-3kdj.onrender.com",
+                "http://localhost:8080",
+"http://127.0.0.1:5500",
+"https://546vxpt2-5500.inc1.devtunnels.ms"
         ));
         config.setAllowedHeaders(Arrays.asList("*"));
         config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
@@ -29,4 +31,3 @@ public class GlobalCorsConfig {
         return new CorsFilter(source);
     }
 }
-
