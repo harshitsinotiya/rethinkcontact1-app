@@ -1,13 +1,13 @@
-package rethink.controller;
+// package rethink.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+// import org.springframework.stereotype.Controller;
+// import org.springframework.web.bind.annotation.GetMapping;
+// import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-public class RootController {
-    @GetMapping("/")
-    public String home() {
-        return "Backend Running Successfully!";
-    }
-}
+// @RestController
+// public class RootController {
+//     @GetMapping("/")
+//     public String home() {
+//         return "Backend Running Successfully!";
+//     }
+// }
