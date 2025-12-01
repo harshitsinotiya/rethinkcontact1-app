@@ -6,9 +6,10 @@ import rethink.service.ContactService;
 import rethink.contact.entity.Contact;
 import java.util.List;
 
+
 @RestController
 @RequestMapping("/contacts")
-
+/* @CrossOrigin(origins = "*") */ // safe CORS
 public class ContactController {
 
     private final ContactService service;
